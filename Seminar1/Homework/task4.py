@@ -12,3 +12,10 @@ elif quarter == 3:
     print (f'В указанную четверть {quarter} попадает диапазон координат X < 0 и Y < 0 ')
 else:
     print (f'В указанную четверть {quarter} попадает диапазон координат X > 0 и Y < 0 ')
+
+# coordinates = [0, 'x > 0; y > 0', 'x < 0; y > 0', 'x < 0; y < 0', 'x > 0; y < 0']
+# num_quarter = int(input('Введите номер четверти: '))
+# if num_quarter >= 1 and num_quarter <= 4:
+#     print(f'Диапазон координат {num_quarter} четверти {coordinates[num_quarter]}')
+# else:
+#     print('Упс! Данного номера четверти не существует!')

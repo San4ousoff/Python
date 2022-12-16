@@ -20,3 +20,4 @@ print(f'Координаты точки B: {arr_b}')
 # segment_length = round(math.sqrt((arr_b[0]-arr_a[0])**2 + (arr_b[1]-arr_a[1])**2),2)
 segment_length = round((((arr_b[0]-arr_a[0])**2 + (arr_b[1]-arr_a[1])**2)**0.5),2)
 print(f'Длина отрезка между точками A и B = {segment_length}')
+
