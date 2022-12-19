@@ -2,17 +2,10 @@
 # Пример:
 # - 6782 -> 23
 # - 0,56 -> 11
+import defs
 
-def isfloat(value):
-    try:
-        float(value)
-        return True
-    except ValueError:
-        return False
-
-for i in range(3):
-    number = input(f'Введите число ({i} попытки): ')
-    if isfloat(number):
-        print('Это число')
-    else:
-        print('Это не число')
+num = input("Введите вещественное число: ")
+arr = num.split(".") 
+num_1 = abs(int(arr[0])) # целая часть приведена в абсолютное значение для исключения ошибки с отрицательным числом
+num_2 = int(arr[1]) # дробная часть
+print(f"Сумма цифр числа {num} =", defs.sum_of_digits(num_1) + defs.sum_of_digits(num_2))
