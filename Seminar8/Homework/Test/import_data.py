@@ -1,9 +1,7 @@
 import check as ch
 import csv
 
-all_classes = {}
-all_students = {}
-id_student = 1
+
 
 def from_file():
     pass
@@ -17,31 +15,34 @@ def create_student():
     tel = input("Введите телефон ученика: ")
     # adress = input("Введите адрес ученика: ")
     class_name = input("Введите наименование класса ученика: ")
-    global all_classes
-    if class_name not in all_classes:
-        create_cl(class_name)
+    # global all_classes
+    # if class_name not in all_classes:
+    #     create_cl(class_name)
     global id_student
-    all_classes[class_name]=id_student
+    # all_classes[class_name]=id_student
     # st_data = [surname, name, otch, birth, tel, adress, class_name]
     st_data = [surname, tel, class_name]
+    # st_data = [surname, tel]
     global all_students
     all_students[id_student] = st_data
-    id_student += 1
     print(all_students)
-    # for key in all_students:
-    #     print(all_students[key])
-    print(all_classes)
     ch.press_key()
-
-    with open(r"Seminar8/Homework/dict_students.csv", 'w+', encoding="utf-8") as file:
+    
+    with open(r"Seminar8/Homework/dict_students.csv", 'a', encoding="utf-8") as file:
         writer = csv.writer(file)
+        # for key, value in all_students.items():
         for key, value in all_students.items():
             writer.writerow([key, value])
-
-    with open(r"Seminar8/Homework/dict_classes.csv", 'w+', encoding="utf-8") as file:
-        writer = csv.writer(file)
-        for key, value in all_classes.items():
-            writer.writerow([key, value])
+        
+    id_student += 1
+    # for key in all_students:
+    #     print(all_students[key])
+    # print(all_classes)
+    
+    # with open(r"Seminar8/Homework/dict_classes.csv", 'w+', encoding="utf-8") as file:
+    #     writer = csv.writer(file)
+    #     for key, value in all_classes.items():
+    #         writer.writerow([key, value])
 
     # with open(r"Seminar8/Homework/dict_classes.txt", 'a', encoding="utf-8") as file:
     #     file.write(all_classes)
